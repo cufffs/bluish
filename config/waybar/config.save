@@ -1,0 +1,76 @@
+{
+	"height":17,
+
+	"clock":{
+		"format":"{:%H:%M}",
+	},
+
+	"backlight":{
+		"interval":2,
+		"format":"{icon}",
+		"format-icons":["","","", "", "", "", "", ""],
+		"max-length":5,
+		"smooth-scrolling-threshold":1,
+		"on-scroll-up": "light -A 5",
+		"on-scroll-down":"light -U 5",
+	},
+	
+	"battery":{
+		"interval":60,
+		"full-at": 100,
+		"states":{
+			"good":80,
+			"warning":25,
+			"critical":10,
+		},
+		"format": "{icon} {capacity}%",
+		"format-charging": "ﯓ {capacity}%",
+		"format-plugged": " {capacity}%",
+		"format-full": "",
+		"format-alt": "{icon}{time}",
+		"format-icons": ["", "", "", "", "", "", "", "", "", "", ""],
+		"format-time": "{H}:{M}",
+		"tooltip": true,
+	},
+
+	//
+
+	"network":{
+		"interval":5,
+		"format-wifi":"直 {essid}| {signalStrength}%",
+		"format-linked":"睊 {essid}",
+		"format-alt":" {bandwidthDownBits}| {bandwidthUpBits}",
+		//"format-alt":" {signalStrength}%",
+		"format-disconnected":"睊 ",
+		"format-disabled":"睊 OFF",
+		"tooltip-format-disconnected":"disconnected",
+		"on-click-right":"exec nmtui",
+	},
+
+	"bluetooth":{
+		"format-on":"",
+		"format-off":"",
+		"format-connected":"",
+		"on-click":"bluetuith &",
+	},
+
+	"hyprland/window": {
+		"format": "👉 {}",
+		"separate-outputs": true
+	},
+
+	"cpu":{
+		"interval":20,
+		"format":" {usage}%",
+	},
+
+	"memory":{
+		"interval":45,
+		"format":" {used}GiB",
+		"format-alt":" {percentage}%",
+	},
+
+	"modules-left":["cpu","memory"],
+	"modules-center":["hyprland/window"],
+	"modules-right":["backlight","bluetooth","battery","network","clock"],
+}

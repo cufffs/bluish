@@ -1,0 +1,185 @@
+
+///most of the icons from https://github.com/be5invis/Iosevka
+///using font-manager to view and select icons seems pretty good
+
+{
+	"height":17,
+	"layer":"top",
+//	"mode":"dock",
+//	"exclusive":true,
+//	"position":"top",
+//	"ipc":false,
+
+	"mpd":{
+		"interval":5,
+		"unknown-tag":"unknown",
+		"format":"{stateIcon} {artist} - {title}",
+		"format-disconnect":" disconnected",
+		"format-paused":"{stateIcon} {artist} - {title}",
+		"format-stopped":"Stopped",
+		"state-icons":{
+			"paused": "",
+			"playing":"奈"
+		},
+		"on-click":"mpc toggle",
+		"on-click-middle":"mpc prev",
+		"on-click-right":"mpc next",
+		"on-scroll-up":"mpc seek +00:00:02",
+		"on-scroll-down":"mpc seek -00:00:02",
+		"smooth-scrolling-threshold":1
+	},
+
+  "custom/recorder": {
+    "format": "",
+    "return-type": "json",
+    "interval": 1,
+    "exec": "echo '{\"class\": \"recording\"}'",
+    "exec-if": "pgrep wf-recorder"
+  },
+
+
+	"custom/power":{
+		"format":"",
+		//"tooltip":false,
+		"max-length":5,
+		"escape":true,
+		"on-click": "pkill wofi; hyprctl dispatch exec ~/.config/wofi/logout",
+	},
+
+	"clock":{
+		"format":" {:%I:%M %p}",
+		"format-alt":" {:%a %b %d, %G}",
+        	"calendar-weeks-pos": "right",
+                "today-format": "<span color='#ff6699'><b><u>{}</u></b></span>",
+		"format-calendar": "<span color='#ecc6d9'><b>{}</b></span>",
+        	"format-calendar-weeks": "<span color='#99ffdd'><b>W{:%U}</b></span>",
+        	"format-calendar-weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+		"tooltip":true,
+		"tooltip-format":"{calendar}"
+	},
+
+	"backlight":{
+		"interval":2,
+		"format":"{icon}",
+		"format-icons":["","","", "", "", "", "", ""],
+		"max-length":5,
+		"smooth-scrolling-threshold":1,
+		"on-scroll-up": "light -A 5",  ///requires light & configure permisions
+		"on-scroll-down":"light -U 5", ///maybe restart computer after
+	},
+	
+	"battery":{
+		"interval":60,
+		"full-at": 100,
+		"states":{
+			"good":80,
+			"warning":25,
+			"critical":10,
+		},
+		"format": "{icon} {capacity}%",
+		"format-charging": " {capacity}%ﯓ",
+		"format-plugged": " {capacity}%",
+		"format-full": "",
+		"format-alt": "{icon}{time}",
+		"format-icons": ["", "", "", "", "", "", "", "", "", "", ""],
+		"format-time": "{H}:{M}",
+		"tooltip": true,
+	},
+
+	//
+
+	"network":{
+		"interval":5,
+		"tooltip":false,
+		"format-wifi":"直 {essid} |  {signalStrength}%",
+		"format-linked":"睊 {essid}",
+		"format-alt":" {bandwidthDownBits}| {bandwidthUpBits}",
+		//"format-alt":" {signalStrength}%",
+		"format-disconnected":"睊 ",
+		"format-disabled":"睊 OFF",
+		"tooltip-format-disconnected":"disconnected",
+		"on-click-right":"pkill nmtui; kitty --title fly_is_kitty_center nmtui",
+		"max-width":50,
+	},
+
+	"bluetooth":{
+		"format-on":"",
+		"format-off":"",
+		"format-connected":"",
+		"on-click-right":"pkill bluetuith; kitty --title fly_is_kitty_center bluetuith", ///requires bluez bluez-bluetooth bluetuith
+	},
+
+	"pulseaudio":{
+		//墳婢  
+		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle", //mute toggle
+		"on-click-right":"pavucontrol", ///requires pulseaudio pavucontrol
+		"format":"{icon} {volume:3}%",
+		"format-bluetooth":"{volume:3}% {icon} ",
+		"smooth-scrolling-threshold":2,
+    "format-muted":"婢     ", 	//spaces so no movement
+		"format-icons":{
+			"default":["","",""]
+		},
+	},
+
+	"hyprland/window": {
+		"format": "👉 {}",
+		"separate-outputs": true
+	},
+
+	"cpu":{
+		"interval":20,
+		"format":" {usage:3}%",
+	},
+
+	"memory":{
+		"interval":45,
+		//"format":" {used:8}GiB",
+		"format":" {percentage:3}%",
+		"tooltip":true,
+		"tooltip-format":" {used:0.2f}GiB/{total:0.2f}GiB"
+	},
+
+	"disk":{
+		"path":"/",
+		"format":"{percentage_used:3}%",
+		"tooltip":true,
+		"tooltip-format":" {used}GiB/{total}GiB | FREE: {free}GiB" 
+	},
+
+	"disk#homedir":{
+		"path":"/home",
+		"format":"{percentage_used:3}%",
+		"tooltip":true,
+		"tooltip-format":" {used}GiB/{total}GiB | FREE: {free}GiB"
+	},
+
+	"temperature":{
+		"format":" {temperatureC}°C",
+		"tooltip":false
+	},
+
+	"idle_inhibitor":{
+		"format":"{icon}",
+		"format-icons":{
+			"activated":"﯎",
+			"deactivated":"﯏"
+		}
+	},
+
+	"tray":{
+		"icon-size":12,
+		"spacing":5,
+		"reverse-direction":true
+	},
+
+	"wlr/workspaces":{
+		"format":"{name}",
+		"on-click":"activate"		
+	},
+
+	"modules-left":["cpu","memory","disk","disk#homedir","temperature","wlr/workspaces"],
+	"modules-center":["mpd","custom/recorder"],
+	"modules-right":["tray","idle_inhibitor","backlight","battery","bluetooth","pulseaudio","network","clock","custom/power"],
+}
+
