@@ -1,0 +1,25 @@
+!#/bin/sh
+
+cd ~
+
+#log WLR errors and logs
+export HYPRLAND_LOG_WLR=1
+
+#tell xwayland to use a cursor theme
+export XCURSOR_THEME=Bibata-Modern-Classic
+
+export NNN_PLUG='p:preview-tui;v:imgview;j:autojump;c:chksum;f:fzcd;d:dragdrop;r:renamer;s:suedit;x:togglex'
+export NNN_FCOLORS='0000E6310000000000000000'
+export NNN_FIFO="/tmp/nnn.fifo"
+
+#set a cursor size
+export XCURSOR_SIZE=24
+
+#example ime support
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+export SDL_IM_MODUKE=fcitx
+export GLFW_IM_MODULE=ibus
+
+exec Hyprland

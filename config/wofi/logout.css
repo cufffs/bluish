@@ -1,0 +1,46 @@
+*{
+	padding:0px;
+	margin:0px;
+	min-width:0px;
+	min-height:0px;
+}
+
+#window{
+	background-color: #303446;
+	opacity: 0.75;
+	color: #c6d0f5;
+	border:2px solid #babbf1;
+	border-radius:10px;
+}
+
+#outer-box{
+	padding:0px;
+}
+
+#input{
+	opacity:0;
+	padding:0px;
+	margin:0px;
+	min-width:0px;
+	min-height:0px;
+	color: rgba(1,0,0,0);
+	border:none;
+	background-color:rgba(0,0,0,0);
+}
+
+#input image{
+	color: rgba(0,0,0,0);
+}
+
+#entry{
+	padding: 0px 0px 0 35px;
+	margin:0px;
+	border:0px;
+}
+
+#entry:selected{
+	background: #292c3c;
+	color:#c6d0f5;
+	border: 2px solid #babbf1;
+	border-radius:10px;
+}
