@@ -2,6 +2,13 @@
 **COMMON ALL
 **********************************************************/
 
+/**
+ * 
+	border: 1px solid @outsideborder;
+ */
+
+@define-color outsideborder #babbf1;/*#ca9ee6;*/
+
 *{
 	font-family:
 		"JetBrains Mono",  
@@ -91,7 +98,7 @@ tooltip{
 #workspaces button.urgent,
 #workspaces button.hidden
 {
-	color:#babbf1;
+	color:@outsideborder;
 	margin:0px;
 	padding: 0px;
 	border-radius: 0;
@@ -101,7 +108,7 @@ tooltip{
 
 #workspaces button.active{
 	/*background: rgba(0,0,0,0.9);*/
-	border: 1px solid #babbf1;
+	border: 1px solid @outsideborder;
 	border-radius: 5px;
 	color:#99d1db;
 }
@@ -119,47 +126,53 @@ tooltip{
 	padding: 0 2px 0 10px;
 	margin: 0 0px 0 5px;
 	border-radius: 10px 0px 0px 10px;
-	border: 1px solid #babbf1;
+	border: 1px solid @outsideborder;
 	border-style: solid none solid solid;
+  color: #8caaee;
 }
 
 #memory{
 	padding: 0 2px 0 2px;
 	margin: 0 0px 0 0px;
 	border-radius: 0px 0px 0px 0px;
-	border: 1px solid #babbf1;
+	border: 1px solid @outsideborder;
 	border-style: solid none solid none;
+  color: @outsideborder; 
 }
 
 #disk{
 	padding: 0 2px 0 2px;
 	margin: 0 0px 0 0px;
 	border-radius: 0px 0px 0px 0px;
-	border: 1px solid #babbf1;
+	border: 1px solid @outsideborder;
 	border-style: solid none solid none;
+  color: #85c1dc;
 }
 
 #disk.homedir{
 	padding: 0 2px 0 2px;
 	margin: 0 0px 0 0px;
 	border-radius: 0px 0px 0px 0px;
-	border: 1px solid #babbf1;
+	border: 1px solid @outsideborder;
 	border-style: solid none solid none;
+  color: #99d1db;
 }
 
 #temperature{
 	padding: 0 10px 0 2px;
 	margin: 0 5px 0 0;
 	border-radius: 0px 10px 10px 0px;
-	border: 1px solid #babbf1;
+	border: 1px solid @outsideborder;
 	border-style: solid solid solid none;
+  color: #81c8be ;
 }
 
 #workspaces{
 	padding: 0 10px 0 10px;
 	margin: 0 5px 0 5px;
 	border-radius:10px;
-	border: 1px solid #babbf1;
+	border: 1px solid @outsideborder;
+  color: #a6d189 ;
 }
 
 /**********************************************************
@@ -171,7 +184,8 @@ tooltip{
 	padding: 0 5px 0 5px;
 	margin: 0 5px 0 5px;
 	border-radius:10px;
-	border: 1px solid #babbf1;
+	border: 1px solid @outsideborder;
+  color: #e5c890;
 }
 
 #custom-recorder {
@@ -192,7 +206,7 @@ tooltip{
 	padding: 0 10px 0 10px;
 	margin: 0 5px 0 5px;
 	border-radius:10px;
-	border: 1px solid #babbf1;
+	border: 1px solid @outsideborder;
 }
 
 #tray menu{
@@ -209,37 +223,42 @@ tooltip{
 	padding: 0 2px 0 10px;
 	margin: 0 0px 0 5px;
 	border-radius: 10px 0px 0px 10px;
-	border: 1px solid #babbf1;
+	border: 1px solid @outsideborder;
 	border-style: solid none solid solid;
+  color:#ef9f76;
 }
 
 #backlight{
 	padding: 0 2px 0 2px;
 	border-radius: 0px;
-	border: 1px solid #babbf1;
+	border: 1px solid @outsideborder;
 	border-style: solid none solid none;
+  color:#eebebe;
 }
 
 #battery{
 	padding: 0 2px 0 2px;
 	border-radius: 0px;
-	border: 1px solid #babbf1;
+	border: 1px solid @outsideborder;
 	border-style: solid none solid none;
+  color:#f4b8e4;
 }
 
 #bluetooth{
 	padding: 0 2px 0 2px;
 	border-radius: 0px;
-	border: 1px solid #babbf1;
+	border: 1px solid @outsideborder;
 	border-style: solid none solid none;
+  color:#ca9ee6;
 }
 
 #pulseaudio{
 	padding: 0 10px 0 0;
 	margin: 0 5px 0 0;
 	border-radius: 0px 10px 10px 0px;
-	border: 1px solid #babbf1;
+	border: 1px solid @outsideborder;
 	border-style: solid solid solid none;
+  color:#f4b8e4;
 }
 
 /*****
@@ -250,7 +269,8 @@ tooltip{
 	padding: 0 9px 0 9px;
 	margin: 0 5px 0 5px;
 	border-radius:10px;
-	border: 1px solid #babbf1;
+	border: 1px solid @outsideborder;
+  color:#eebebe;
 }
 
 /***********
@@ -261,7 +281,8 @@ tooltip{
 	padding: 0px 5px 0px 5px;
 	margin: 0px 5px 0px 5px;
 	border-radius:10px;
-	border: 1px solid #babbf1;
+	border: 1px solid @outsideborder;
+  color:#f2d5cf;
 }
 
 /***********
@@ -272,7 +293,8 @@ tooltip{
 	padding: 0 5px 0 5px;
 	margin: 0px 5px 0px 5px;
 	border-radius:10px;
-	border: 1px solid #babbf1;
+	border: 1px solid @outsideborder;
+  color:#e78284;
 }
 
 /**********************************************************
