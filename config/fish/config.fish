@@ -7,6 +7,8 @@ end
 
 source ~/.config/fish/nnn.fish
 
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
 set -l teal 94e2d5
 set -l flamingo f2cdcd
 set -l mauve cba6f7
@@ -65,8 +67,8 @@ abbr -a -g n 'nnn'
 abbr -a -g v 'nvim'
 abbr -a -g vi 'nvim ~/.config/nvim/init.lua'
 # Locale
-export LANG="en_AU.UTF-8"
 export LC_ALL="en_AU.UTF-8"
+export LANG="en_AU.UTF-8"
 
 # Term
 switch "$TERM_EMULATOR"
