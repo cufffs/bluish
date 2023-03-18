@@ -1,10 +1,9 @@
 # bluish
 just some dot files for my daily driver
 
-https://user-images.githubusercontent.com/14177650/226083200-56f292f1-a77d-430b-b34f-effd7e8e5fbe.mp4
 
+https://user-images.githubusercontent.com/14177650/226083406-ffe28496-416f-4f86-a939-b8d7343f1250.mov
 
-https://user-images.githubusercontent.com/14177650/226083235-2ceaa608-6ad0-4147-bafa-4cbd54a2840f.mp4
 
 
 #### info
