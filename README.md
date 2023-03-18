@@ -34,3 +34,4 @@ where possible I use pacman, otherwise yay
 
 #### todo:
 add hotkeys for volume/brightness
+hotkeys to move floating window
