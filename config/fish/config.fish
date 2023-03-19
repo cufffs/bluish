@@ -3,6 +3,8 @@ if status is-interactive
     starship init fish | source &
     thefuck --alias fuck | source &
     jump shell fish | source &
+    eval $(ssh-agent -c) &>/dev/null &
+    ssh-add ~/.ssh/githubkey &>/dev/null &
 end
 
 source ~/.config/fish/nnn.fish
