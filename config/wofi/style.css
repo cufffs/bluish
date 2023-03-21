@@ -6,20 +6,19 @@
 4: alt bg 
 */
 
-
 *{
 	font-family:
 		"JetBrains Mono",
 		"Iosevka Nerd Font",
 		sans-serif;
-	font-size:10px;
+	  font-size:10px;
 }
 
 #window{
 	background-color: --wofi-color0;
 	opacity: 0.95;
 	color:--wofi-color1;
-	border:2px solid --wofi-color3;
+	border:1px solid --wofi-color3;
 	border-radius:10px;
 }
 
@@ -29,14 +28,14 @@
 
 #input{
 	color: --wofi-color1;
-	background-color: --wofi-color2;
-	border:2px solid --wofi-color3;
-	padding:5px;
-	margin:0px;
+	background-color: --wofi-color0;
+	border:1px solid --wofi-color1;
+	padding:0px;
+	margin:10px 10px 0px 10px;
 }
 
 #input:focused{
-	border: 2px solid --wofi-color3;
+	border: 1px solid --wofi-color3;
 	outline:none;
 	box-shadow: inset 0 0 0 0;
 }
@@ -46,7 +45,7 @@
 }
 
 #inner-box{
-	background-color: --wofi-color2;
+	background-color: --wofi-color0;
 }
 
 #text{
