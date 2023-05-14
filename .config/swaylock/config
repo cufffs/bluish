@@ -1,0 +1,22 @@
+screenshots
+effect-pixelate=13
+ignore-empty-password
+disable-caps-lock-text
+font="Iosevka Nerd Font"
+font-size=32
+indicator-radius=50
+indicator-thickness=5
+inside-ver-color=303446aa
+ring-ver-color=8caaeeaa
+ring-color=b5bfe2aa
+key-hl-color=a6d189aa
+bs-hl-color=f4b8e4aa
+ring-clear-color=f2d5cfaa
+inside-clear-color=f2d5cfaa
+text-color=c6d0f5ff
+#line-color=babbf1ff
+line-clear-color=babbf1ff
+line-caps-lock-color=babbf1ff
+line-ver-color=babbf1ff
+line-wrong-color=babbf1ff
+#separator-color=babbf1ff

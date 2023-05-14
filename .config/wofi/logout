@@ -1,0 +1,20 @@
+#!/bin/bash
+
+entries="⇠ logout\n⏾ suspend\n reboot\n poweroff\n close"
+
+style=~/.config/wofi/logout.css
+
+selected=$(echo -e $entries|wofi --style $style -W 1 -H 155 -l 3 -x -150 --dmenu --cache-file /dev/null | awk '{print tolower($2)}')
+
+case $selected in
+  logout)
+    killall Hyprland;;
+  suspend)
+    exec systemctl suspend;;
+  reboot)
+    exec systemctl reboot;;
+  poweroff)
+    exec systemctl poweroff -i;;
+  close)
+    exit;;
+esac
