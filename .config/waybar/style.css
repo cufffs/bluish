@@ -43,7 +43,7 @@ tooltip{
 #disk,
 #memory,
 #disk,
-#mpd,
+#custom-mpd,
 #custom-tidal,
 #custom-media,
 #tray,
@@ -181,7 +181,7 @@ tooltip{
 **CENTER
 **********************************************************/
 
-#mpd,
+#custom-mpd,
 #custom-media,
 #custom-tidal{
 	min-width:200px;
@@ -192,7 +192,7 @@ tooltip{
   color: #e5c890;
 }
 
-#mpd{
+#custom-mpd{
   color: #a6d189;
 }
 
