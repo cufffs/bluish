@@ -8,6 +8,24 @@
   "output":"DP-1",
 
 //handles tidal-hifi + ncmpcpp (if using mpdris2)
+//bit of a mess but allows left control over 3 sources (mpd, firefox or other (not chromium), tidal-hifi)
+    "custom/tidal": {
+      "format": "{icon}{}",
+      "return-type": "json",
+      "format-icons": {
+        "Playing": " ",
+        "Paused": " ",
+      },
+      "max-length":70,
+      "exec": "playerctl --player=tidal-hifi metadata  --format '{\"text\": \"{{markup_escape(artist)}} - {{markup_escape(title)}}\", \"tooltip\": \"{{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+      "on-click": "playerctl --player=tidal-hifi play-pause",
+      "on-click-right": "playerctl --player=tidal-hifi next",
+      "on-click-middle": "playerctl --player=tidal-hifi previous",
+      "smooth-scrolling-threshold": 10,
+      "on-scroll-up": "playerctl --player=tidal-hifi position 5 +",
+      "on-scroll-down": "playerctl --player=tidal-hifi position 5 -",
+
+    },
     "custom/media": {
       "format": "{icon}{}",
       "return-type": "json",
@@ -16,35 +34,35 @@
         "Paused": " ",
       },
       "max-length":70,
-      "exec": "playerctl -a metadata --format '{\"text\": \"{{markup_escape(artist)}} - {{markup_escape(title)}}\", \"tooltip\": \"{{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-      "on-click": "playerctl play-pause",
-      "on-click-right": "playerctl next",
-      "on-click-middle": "playerctl previous",
+      "exec": "playerctl --ignore-player=mpd,tidal-hifi,chromium -a metadata --format '{\"text\": \"{{markup_escape(artist)}} - {{markup_escape(title)}}\", \"tooltip\": \"{{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+      "on-click": "playerctl --ignore-player=mpd,tidal-hifi,chromium play-pause",
+      "on-click-right": "playerctl --ignore-player=mpd,tidal-hifi,chromium next",
+      "on-click-middle": "playerctl --ignore-player=mpd,tidal-hifi,chromium previous",
       "smooth-scrolling-threshold": 10,
-      "on-scroll-up": "playerctl position 5 +",
-      "on-scroll-down": "playerctl position 5 -",
+      "on-scroll-up": "playerctl --ignore-player=mpd,tidal-hifi,chromium position 5 +",
+      "on-scroll-down": "playerctl --ignore-player=mpd,tidal-hifi,chromium position 5 -",
 
     },
 
-//    "mpd":{
-//      "interval":5,
-//      "unknown-tag":"unknown",
-//      "format":"{stateIcon} {artist} - {title}",
-//      "format-disconnect":" disconnected",
-//      "format-paused":"{stateIcon} {artist} - {title}",
-//      "format-stopped":"Stopped",
-//      "state-icons":{
-//          "paused": " ",
-//          "playing":" "
-//      },
-//      "on-click":"mpc toggle",
-//      "on-click-middle":"mpc prev",
-//      "on-click-right":"mpc next",
-//      "on-scroll-up":"mpc seek +00:00:02",
-//      "on-scroll-down":"mpc seek -00:00:02",
-//      "smooth-scrolling-threshold":1
-//    },
-//
+    "mpd":{
+      "interval":5,
+      "unknown-tag":"unknown",
+      "format":"{stateIcon} {artist} - {title}",
+      "format-disconnect":" disconnected",
+      "format-paused":"{stateIcon} {artist} - {title}",
+      "format-stopped":"Stopped",
+      "state-icons":{
+          "paused": " ",
+          "playing":" "
+      },
+      "on-click":"mpc toggle",
+      "on-click-middle":"mpc prev",
+      "on-click-right":"mpc next",
+      "on-scroll-up":"mpc seek +00:00:02",
+      "on-scroll-down":"mpc seek -00:00:02",
+      "smooth-scrolling-threshold":1
+    },
+
   "custom/recorder": {
     "format": "",
     "return-type": "json",
@@ -195,7 +213,7 @@
 	},
 
 	"modules-left":["cpu","memory","disk","disk#homedir","temperature","wlr/workspaces"],
-	"modules-center":["custom/media","custom/recorder"],
+	"modules-center":["mpd","custom/media", "custom/tidal","custom/recorder"],
 	"modules-right":["tray","idle_inhibitor","backlight","battery","bluetooth","pulseaudio","network","clock","custom/power"],
 }
 

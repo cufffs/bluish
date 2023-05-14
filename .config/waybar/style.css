@@ -44,6 +44,7 @@ tooltip{
 #memory,
 #disk,
 #mpd,
+#custom-tidal,
 #custom-media,
 #tray,
 #pulseaudio,
@@ -181,13 +182,22 @@ tooltip{
 **********************************************************/
 
 #mpd,
-#custom-media{
+#custom-media,
+#custom-tidal{
 	min-width:200px;
 	padding: 0 5px 0 5px;
 	margin: 0 5px 0 5px;
 	border-radius:10px;
 	border: 1px solid @outsideborder;
   color: #e5c890;
+}
+
+#mpd{
+  color: #a6d189;
+}
+
+#custom-tidal{
+  color: #ef9f76;
 }
 
 #custom-recorder {
