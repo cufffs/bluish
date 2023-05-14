@@ -27,16 +27,63 @@ where possible I use pacman, otherwise yay
 | notification | mako |
 | launcher | wofi |
 | editor | neovim (lazyvim)
-| music | ncmpcpp, mpd, cava |
+| music | ncmpcpp, mpd, cava, mpc,  |
 | wallpaper | hyprpaper |
 | file maganger | nnn, thunar |
-| lock | swaylock |
-| terminal | kitty |
+| lock | swaylock-effects |
+| terminal stuff | kitty fish fzf.fish(awesome plugin)|
 | shell | fish, jump, starship, pokemon-colorscripts, thefuck |
 | browser | firefox w/catppuccin |
-| screenshots/video | grim, slurp, wl-copy |
+| screenshots/video | grim, slurp, wl-copy, wf-recorder|
 
 #### todo:
-add hotkeys for volume/brightness
+add hotkeys for ~~volume~~/brightness
 hotkeys to move floating window
 
+#### other stuff:
+kitty font:
+font_size 10
+font_family      JetBrainsMonoMedium Nerd Font
+
+
+#### common hotkeys:
+|||
+|:-|:-|
+|MOD Q | kill active
+|MOD F8 | gamemode
+|MOD T | fullscreen opaque kitty
+|MOD ALT RETURN | floating transparent kitty at mouse
+|MOD RETURN | tiled transparent kitty
+|MOD SHIFT RETURN | tiled opaque kitty
+|MOD F | firefox
+|MOD E | thunar
+|MOD N | nnn
+|MOD ALT N | nnn floating center screen
+|MOD SPACE | wofi app launcher
+|MOD Z | swaylock screen
+|MOD V | nvim
+|MOD ALT V | nvim floating center
+|MOD M | ncmpcpp floating center
+|MOD SHIFT M | tiled cava (eq)
+|MOD ALT M | ncpamixer floating center
+|MOD , . / | next/prev/pause/play songs
+|MOD - = | +/- 10% volume
+|MOD ] | screenshot region save and copy to clipboard
+|MOD ALT ]| screenshot screen save and copy to clipboard
+|MOD SHIFT ]| just copy region to clopboard
+|MOD [ | video region save
+|MOD ALT [| video screen
+|MOD S | toggle hyprland split
+|MOD G | toggle hyprland pseudo
+|MOD P | toggle hyprland floating
+|MOD O | toggle hyprland fullscreen
+|MOD H J K L | move hyprland focus around
+|MOD SHIFT H J K L | small resize of window
+|MOD CTRL H J K L | big resize of window
+|MOD ALT H J K L | move window
+|MOD TAB | more hyprland focusing
+|MOD 1,2,..0 | switch between workspaces
+|MOD ALT 1,2,..,0 | move window silently to workspace
+|MOD SHIFT 1,2,..,0 | move window and follow to workspace
+|MOD LEFT DRAG | move window
+|MOD RIGHT DRAG | resize window
