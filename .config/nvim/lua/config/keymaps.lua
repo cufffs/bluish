@@ -23,6 +23,28 @@ vim.api.nvim_set_keymap(
   }
 )
 
+vim.api.nvim_set_keymap(
+  "n",
+  "<Leader>sG",
+  ':lua require("telescope.builtin").live_grep({ find_command = { "rg", "--no-ignore", "--hidden", "--files" } })<CR>',
+  {
+    noremap = true,
+    silent = true,
+    desc = "grep all",
+  }
+)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<Leader>sg",
+  ':lua require("telescope.builtin").live_grep({ search_dirs = { vim.fn.getcwd() }, hidden = true, no_ignore = true })<CR>',
+  {
+    noremap = true,
+    silent = true,
+    desc = "grep all!",
+  }
+)
+
 vim.keymap.set("n", "<Leader>nn", ":NnnPicker %:p:h<CR>", {
   silent = true,
 })
